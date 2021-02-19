@@ -12,7 +12,7 @@ body {
 	margin: 0;
 	padding: 0;
 	min-height: 100%;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 body.lock {
 	overflow: hidden;
@@ -397,6 +397,104 @@ body.lock {
 	display: inline-block;
 	font-size: 14px;
 }
+.portfolio {
+	padding: 73px 0 0 0;
+}
+.portfolio__title {
+	margin: 0px 0px 40px 0px;
+}
+.portfolio__cats {
+	border-left: 2px solid rgba(0,0,0,0.2);
+	position: relative;
+	margin: 0px 0px 68px 0px;
+}
+.cats__underline {
+	display: block;
+	height: 50px;
+	width: 2px;
+	background-color: var(--red-col);
+	position: absolute;
+	left: -2px;
+	top: 0;
+	z-index: 2;
+}
+.cats {
+	display: flex;
+	flex-direction: column;
+}
+.cats__item {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 50px;
+	color: var(--grey-col);
+	padding: 0 16px;
+	background-color: transparent;
+	text-align-last: left;
+}
+.cats__item:hover {
+	background-color: #fcfcfc;
+}
+.portfolio__items {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+	grid-template-rows: repeat(3, auto);
+	grid-auto-rows: auto;
+	gap: 20px;
+}
+.portfolio__item {
+	position: relative;
+	width: 100%;
+	padding-bottom: 90%;
+}
+.card__img {
+	width: 100%;
+	height: 70%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.card__info {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 3;
+	width: 100%;
+	min-height: 30%;
+	background-color: #01B9C3;
+	color: var(--white-col);
+	padding: 12px 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.card__title {
+	font-size: 22px;
+	line-height: 24px;
+}
+.card__cat {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 500;
+	opacity: 0.8;
+}
+.card__btn {
+	align-self: flex-start;
+	background-color: transparent;
+	font-size: 14px;
+	line-height: 24px;
+	color: var(--white-col);
+	border-bottom: 1px solid #fff;
+}
+.card__btn img {
+	vertical-align: middle;
+	margin: 0px 0px 0px 5px;
+	transition: all 0.2s ease-in-out;
+}
+.card__btn:hover > img{
+	transform: translateX(5px);
+}
 .message {
 	padding: 75px 0 82px 0;
 }
@@ -499,9 +597,28 @@ body.lock {
 	font-size: 12px;
 	color: var(--grey-col);
 }
-@media(min-width: 480px) {
+@media(min-width: 490px) {
 	.header__img img {
 		width: 55%;
+	}
+	.cats {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.portfolio__cats {
+		border-left: none;
+		border-bottom: 2px solid rgba(0,0,0,0.2);
+	}
+	.cats__underline {
+		height: 2px;
+		width: 100px;
+		top: initial;
+		left: 0;
+		bottom: -2px;
+	}
+	.cats__item {
+		text-align: center;
 	}
 }
 @media(min-width: 810px) {
